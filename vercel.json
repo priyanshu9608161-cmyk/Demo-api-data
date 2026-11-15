@@ -1,1 +1,18 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "version": 2,
+  "builds": [
+    { "src": "index.js", "use": "@vercel/node" }
+  ],
+  "rewrites": [
+    { "source": "/", "destination": "/index.js?__apiRoute=home" },
+    { "source": "/api", "destination": "/index.js?__apiRoute=home" },
+    { "source": "/stats", "destination": "/index.js?__apiRoute=stats" },
+    { "source": "/api/stats", "destination": "/index.js?__apiRoute=stats" },
+    { "source": "/students", "destination": "/index.js?__apiRoute=students" },
+    { "source": "/api/students", "destination": "/index.js?__apiRoute=students" },
+    { "source": "/students/:id", "destination": "/index.js?__apiRoute=student&__studentId=:id" },
+    { "source": "/api/students/:id", "destination": "/index.js?__apiRoute=student&__studentId=:id" }
+  ]
+}
 
